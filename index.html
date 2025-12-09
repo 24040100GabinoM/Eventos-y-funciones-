@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS GAMING - Portal Futurista</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <!-- Fondo animado -->
+    <div class="fondo-animado"></div>
+    
+    <!-- Contenedor principal -->
+    <div class="contenedor-principal">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-text">⚡ NEXUS</span>
+                <span class="logo-subtexto">GAMING</span>
+            </div>
+            <nav class="navegacion">
+                <button class="btn-nav" data-seccion="inicio">INICIO</button>
+                <button class="btn-nav" data-seccion="juegos">JUEGOS</button>
+                <button class="btn-nav" data-seccion="estadisticas">ESTADÍSTICAS</button>
+                <button class="btn-nav" data-seccion="contacto">CONTACTO</button>
+            </nav>
+        </header>
+
+        <!-- Sección Principal -->
+        <section id="inicio" class="seccion activa">
+            <div class="hero">
+                <h1 class="titulo-principal">BIENVENIDO AL FUTURO</h1>
+                <p class="subtitulo">Experimenta el gaming de próxima generación</p>
+                <button class="btn-primario" id="btn-comenzar">COMENZAR PARTIDA</button>
+            </div>
+        </section>
+
+        <!-- Sección Juegos -->
+        <section id="juegos" class="seccion">
+            <h2 class="titulo-seccion">CATÁLOGO DE JUEGOS</h2>
+            <div class="contenedor-juegos">
+                <div class="tarjeta-juego" data-juego="cyber-runner">
+                    <div class="imagen-juego">
+                        <span class="emoji-juego">🎮</span>
+                    </div>
+                    <h3>CYBER RUNNER</h3>
+                    <p class="descripcion">Corre a través del ciberespacio a velocidad extrema</p>
+                    <div class="info-juego">
+                        <span class="tag">FPS</span>
+                        <span class="rating">⭐ 9.8</span>
+                    </div>
+                    <button class="btn-juego">JUGAR AHORA</button>
+                </div>
+
+                <div class="tarjeta-juego" data-juego="neon-battle">
+                    <div class="imagen-juego">
+                        <span class="emoji-juego">⚔️</span>
+                    </div>
+                    <h3>NEON BATTLE</h3>
+                    <p class="descripcion">Batalla multijugador en arenas neon luminosas</p>
+                    <div class="info-juego">
+                        <span class="tag">PVP</span>
+                        <span class="rating">⭐ 9.5</span>
+                    </div>
+                    <button class="btn-juego">JUGAR AHORA</button>
+                </div>
+
+                <div class="tarjeta-juego" data-juego="void-quest">
+                    <div class="imagen-juego">
+                        <span class="emoji-juego">🌌</span>
+                    </div>
+                    <h3>VOID QUEST</h3>
+                    <p class="descripcion">Aventura épica en dimensiones desconocidas</p>
+                    <div class="info-juego">
+                        <span class="tag">RPG</span>
+                        <span class="rating">⭐ 9.7</span>
+                    </div>
+                    <button class="btn-juego">JUGAR AHORA</button>
+                </div>
+
+                <div class="tarjeta-juego" data-juego="quantum-maze">
+                    <div class="imagen-juego">
+                        <span class="emoji-juego">🧩</span>
+                    </div>
+                    <h3>QUANTUM MAZE</h3>
+                    <p class="descripcion">Resuelve puzzles en el laberinto cuántico</p>
+                    <div class="info-juego">
+                        <span class="tag">PUZZLE</span>
+                        <span class="rating">⭐ 9.3</span>
+                    </div>
+                    <button class="btn-juego">JUGAR AHORA</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Estadísticas -->
+        <section id="estadisticas" class="seccion">
+            <h2 class="titulo-seccion">TUS ESTADÍSTICAS</h2>
+            <div class="contenedor-stats">
+                <div class="card-stat">
+                    <div class="stat-numero" id="stat-juegos">0</div>
+                    <p class="stat-label">Juegos Jugados</p>
+                    <button class="btn-stat" onclick="incrementarStat('juegos')">+</button>
+                </div>
+                <div class="card-stat">
+                    <div class="stat-numero" id="stat-victorias">0</div>
+                    <p class="stat-label">Victorias</p>
+                    <button class="btn-stat" onclick="incrementarStat('victorias')">+</button>
+                </div>
+                <div class="card-stat">
+                    <div class="stat-numero" id="stat-puntos">0</div>
+                    <p class="stat-label">Puntos Totales</p>
+                    <button class="btn-stat" onclick="incrementarStat('puntos')">+</button>
+                </div>
+                <div class="card-stat">
+                    <div class="stat-numero" id="stat-nivel">1</div>
+                    <p class="stat-label">Nivel</p>
+                    <button class="btn-stat" onclick="incrementarStat('nivel')">+</button>
+                </div>
+            </div>
+            <div class="contenedor-barras">
+                <div class="barra-estadistica">
+                    <label>Experiencia</label>
+                    <div class="barra">
+                        <div class="progreso" id="barra-exp" style="width: 35%"></div>
+                    </div>
+                    <span>35%</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Contacto -->
+        <section id="contacto" class="seccion">
+            <h2 class="titulo-seccion">CONECTA CON NOSOTROS</h2>
+            <div class="contenedor-contacto">
+                <form class="formulario" id="formulario-contacto">
+                    <div class="grupo-input">
+                        <input type="text" id="nombre" placeholder="Tu nombre" required>
+                        <span class="linea-input"></span>
+                    </div>
+                    <div class="grupo-input">
+                        <input type="email" id="email" placeholder="Tu email" required>
+                        <span class="linea-input"></span>
+                    </div>
+                    <div class="grupo-input">
+                        <textarea id="mensaje" placeholder="Tu mensaje..." required></textarea>
+                        <span class="linea-input"></span>
+                    </div>
+                    <button type="submit" class="btn-enviar">ENVIAR MENSAJE</button>
+                </form>
+                <div class="info-contacto">
+                    <div class="contacto-item">
+                        <span class="icono">📧</span>
+                        <p>correo@nexusgaming.com</p>
+                    </div>
+                    <div class="contacto-item">
+                        <span class="icono">📱</span>
+                        <p>+1 (555) 123-4567</p>
+                    </div>
+                    <div class="contacto-item">
+                        <span class="icono">🌐</span>
+                        <p>www.nexusgaming.com</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 NEXUS GAMING - Diseño Futurista Gaming | Todos los derechos reservados</p>
+            <div class="redes-sociales">
+                <a href="#" class="red-social">🎮</a>
+                <a href="#" class="red-social">💻</a>
+                <a href="#" class="red-social">🌟</a>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modal de notificación -->
+    <div class="modal" id="modal">
+        <div class="contenido-modal">
+            <button class="btn-cerrar" id="btn-cerrar-modal">&times;</button>
+            <h2 id="modal-titulo">Título</h2>
+            <p id="modal-mensaje">Mensaje</p>
+            <button class="btn-modal" onclick="cerrarModal()">ACEPTAR</button>
+        </div>
+    </div>
+
+    <script src="JS/script.js"></script>
+</body>
+</html>
